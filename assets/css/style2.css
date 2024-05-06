@@ -118,6 +118,7 @@ p{
 
     .main{
         flex-direction: column;
+        height: 150vh;
     }
 
     nav ul li a {
@@ -126,7 +127,51 @@ p{
     }
 
     .main .column{
-        width: 80%;
+        padding-top: 20px;
+        height: 80%;
+        width: 75%;
+        border: 5px black solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .column .element-column{
+        height: 16%;
+        width: 90%;
+        border: 3px black solid;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .element-column .text-element{
+        height: 50%;
+        width: 30%;
+        border: 1px black solid;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        font-weight: 550;
+    }
+    
+    .element-column .text-respuesta{
+        height: 50%;
+        width: 60%;
+        padding-left: 10px ;
+        padding-right: 10px;
+        border: 1px black solid;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        border-radius: 10px;
+    }
+    
+    p{
+        font-size: 18px;
+        overflow: hidden;
     }
 }
 
