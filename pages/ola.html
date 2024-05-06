@@ -1,1 +1,19 @@
-ola
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="../datos/pacientes.js"></script>
+</head>
+<body>
+    <label class="text_column">Usuario:</label>
+    <input class="input_date_column" id="usuario" required>
+    <label class="text_column">Contraseña:</label>
+    <input class="input_date_column" id="contrasena" required>
+    <button type="submit" onclick="iniciarSesion()">Iniciar sesión</button>
+    <p id="mensajefinal"></p>
+</body>
+</html>
