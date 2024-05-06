@@ -1,14 +1,14 @@
-import { medicos } from '../datos/citaMedica.js'
+import { medicos, citasMedicas } from '../datos/citaMedica.js'
 
-let camposMedicos = ['Psiquiatría', 'Cardiología', 'Oftalmología', 'Ginecología', 'Traumatología', 'Gastroenterología', 'Urología', 'Obstetricia', 'Pediatría']
-let horasDisponibles = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+let camposMedicos = ['--Seleccionar especialidad--', 'Psiquiatría', 'Cardiología', 'Oftalmología', 'Ginecología', 'Traumatología', 'Gastroenterología', 'Urología', 'Obstetricia', 'Pediatría']
+let horasDisponibles = ['--Seleccionar hora--', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
 
 // CUALQUIER INTERACCIÓN CON EL HTML DEL ARREGLO
 
 let espeO = ''
 
 for (let i = 0; i < camposMedicos.length; i++) {
-    espeO += '<option id="opcionespecialidad">' + camposMedicos[i] + '</option>'
+    espeO += '<option id="opcionespecialidad" onchange="obtenerEspecialidad()">' + camposMedicos[i] + '</option>'
 }
 
 document.getElementById('escogerespecialidad').innerHTML = espeO
@@ -18,8 +18,7 @@ document.getElementById('escogerespecialidad').innerHTML = espeO
 let horaO = ''
 
 for (let i = 0; i < horasDisponibles.length; i++) {
-    let horaImpresa = String(horasDisponibles[i]) + ':00'
-    horaO += '<option id="opcionhora">' + horaImpresa + '</option>'
+    horaO += '<option id="opcionhora" onchange="obtenerHora()">' + horasDisponibles[i] + '</option>'
 }
 
 document.getElementById('escogerhora').innerHTML = horaO
@@ -39,22 +38,43 @@ function obtenerHora() {
 }
 
 
-let especialidadElegida = obtenerEspecialidad()
-let horaElegida = obtenerHora()
+function obtenerMedicos() {
+    let especialidadElegida = obtenerEspecialidad()
+    let horaElegida = obtenerHora()
 
-let disponibilidad1 = medicos.filter(elemento => elemento.especialidades.some(elemento => elemento == especialidadElegida))
-let disponibilidad2 = medicos.filter(elemento => !elemento.horasOcupadas.some(elemento => elemento == horaElegida))
+    let disponibilidad1 = medicos.filter(elemento => elemento.especialidades.some(elemento => elemento === especialidadElegida))
+    let disponibilidad2 = medicos.filter(elemento => !elemento.horasOcupadas.includes(horaElegida))
 
-console.log(disponibilidad1, disponibilidad2)
+    console.log(disponibilidad1, disponibilidad2)
 
-let medicosDisponibles = disponibilidad1.filter(elemento => disponibilidad2.includes(elemento))
+    let listaMedicos = disponibilidad1.filter(elemento => disponibilidad2.includes(elemento))
 
-let medO = ''
+    let medO = ''
 
-for (let i = 0; i < medicosDisponibles.length; i++) {
-    medO += '<option id="opcionmedico">' + medicosDisponibles[i] + '</option>'
+    if (listaMedicos.length === 0) {
+        medO += '<option id="opcionmedico">' + '--No hay médicos disponibles--' + '</option>'
+    }
+
+    for (let i = 0; i < listaMedicos.length; i++) {
+        medO += '<option id="opcionmedico">' + listaMedicos[i].nombre + '</option>'
+    }
+    
+    document.getElementById('escogermedico').innerHTML = medO
 }
 
-document.getElementById('escogermedico').innerHTML = medO
+let opcionesE = document.getElementById('escogerespecialidad')
+let opcionesH = document.getElementById('escogerhora')
+
+opcionesE.addEventListener('change', function() {
+    obtenerEspecialidad()
+    obtenerHora()
+    obtenerMedicos()
+})
+
+opcionesH.addEventListener('change', function() {
+    obtenerHora()
+    obtenerEspecialidad()
+    obtenerMedicos()
+})
 
 // única modificación en el html: <select name="" id="escogermedico" required></select><br><br>
