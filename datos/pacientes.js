@@ -59,14 +59,25 @@ let pacientes = [paciente1, paciente2, paciente3, paciente4]
 //-------------------- Inicio de sesión --------------------//
 
 function iniciarSesion() {
-    let usuarioActual = document.getElementById('usuario').value
-    let contrasenaActual = document.getElementById('contrasena').value
+    let usuarioActual = document.getElementById('usuario').value;
+    let contrasenaActual = document.getElementById('contrasena').value;
 
-    let pacienteExiste = pacientes.find(elemento => elemento.usuario == usuarioActual && elemento.contrasena == contrasenaActual)
+    let pacienteExiste = pacientes.find(elemento => elemento.usuario === usuarioActual && elemento.contrasena === contrasenaActual);
 
     if (pacienteExiste) {
-        window.location.href = "../index.html"
+        window.location.href = "index.html";
     } else {
-        document.getElementById('mensajefinal').innerHTML = 'Usuario o contraseña no válidos'
+        document.getElementById('mensajefinal').innerHTML = 'Usuario o contraseña no válidos';
     }
+}
+
+function guardarInfo() {
+    let usuarioActual = document.getElementById('usuario').value
+    usser.push(usuarioActual)
+    mostrarHistorial()
+}
+
+function iniciar() {
+    iniciarSesion()
+    guardarInfo()
 }
