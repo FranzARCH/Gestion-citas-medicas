@@ -7,6 +7,8 @@ body, html {
 header {
     background-color: black; 
     color: #fff; 
+    text-align: center;
+
 }
 
 nav ul {
@@ -22,16 +24,19 @@ nav ul {
 }
 
 nav ul li {
-    display: inline; 
+    margin: 0 10px; /* Espacio entre elementos */
+    display: inline;
+    overflow: hidden;
+    display: flex;
 }
 
 nav ul li a {
-    display: block; 
-    padding: 24px 1vw; 
+    display: inline; 
+    padding: 8% 1%; 
     color: #fff; 
     text-decoration: none; 
     text-align: center;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 nav ul li a:hover {
@@ -40,14 +45,15 @@ nav ul li a:hover {
 }
 
 .logo{
-    max-width: 350px;
+    max-width: 300px;
     height: auto;
-    padding-left: 35px;
-    margin-top: 30px;
+    padding-left: 40px;
+    margin-top: 20px;
 }
 
 .elementHeader{
-    width: 300px;
+    width: 250px;
+    height: 32px;
 }
 
 .main{
@@ -113,10 +119,18 @@ nav ul li a:hover {
     background-color: #0056b3; 
 }
 
+@media screen and (max-width: 1100px) {
 
-@media (max-width: 768px) {
-    nav ul li {
-        display: block; 
-        margin-bottom: 10px; 
+    nav ul li a {
+         /* Espaciado de enlaces */
+        font-size: 18px; /* Reducir tamaño de fuente */
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    nav ul li a {
+        padding: 10px 20px; /* Espaciado de enlaces */
+        font-size: 16px; /* Reducir tamaño de fuente */
     }
 }
