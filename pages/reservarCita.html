@@ -26,60 +26,56 @@
         </nav>
     </header>
 
-    <main>
-        <section>
-            <form>
-                <label for="especialidad">Elija especialidad:</label>
-                <select id="especialidad" name="especialidad" required>
-                    <option value="">Seleccione una especialidad</option>
-                    <option value="Cardiología">Cardiología</option>
-                    <option value="Dermatología">Dermatología</option>
-                    <option value="Endocrinología">Endocrinología</option>
-                    <option value="Gastroenterología">Gastroenterología</option>
-                    <option value="Neurología">Neurología</option>
-                    <option value="Oftalmología">Oftalmología</option>
-                    <option value="Oncología">Oncología</option>
-                    <option value="Pediatría">Pediatría</option>
-                    <option value="Psiquiatría">Psiquiatría</option>
-                    <option value="Traumatología">Traumatología</option>
-                </select><br><br>
-                
-                <label for="fecha_chita"> Elija día/mes/año:</label>
-                <input type="text" id="fecha_cita" name="fecha_cita" required><br><br>
+    <main class="main">
+            <form class="container">
+                <div class="column">
+                    
+                    <label class="text_column" for="escigerespecialidad">Elija especialidad:</label>
+                    <select class="input_column" name="" id="escogerespecialidad"></select>
+
+                    
+                    <label class="text_column" for="fecha_cita">Elija día/mes/año:</label>
+                    <input class="input_date_column" type="date" id="fecha_cita" name="fecha_cita" required>
 
 
-                <label for="hora_cita">Elija la hora de la cita:</label>
-                <select id="hora_cita" name="hora_cita" required>
-                    <option value="">Seleccione una hora</option>
-                    <option value="09:00">9:00 AM</option>
-                    <option value="10:00">10:00 AM</option>
-                    <option value="11:00">11:00 AM</option>
-                    <option value="12:00">12:00 PM</option>
-                    <option value="13:00">1:00 PM</option>
-                    <option value="14:00">2:00 PM</option>
-                    <option value="15:00">3:00 PM</option>
-                    <option value="16:00">4:00 PM</option>
-                    <option value="17:00">5:00 PM</option>
-                    <option value="18:00">6:00 PM</option>
-                    <option value="19:00">7:00 PM</option>
-                    <option value="20:00">8:00 PM</option>
-                    <option value="21:00">9:00 PM</option>
-                </select><br><br>
+                    <label class="text_column" for="hora_cita">Elija la hora de la cita:</label>
+                    <select class="input_column" id="hora_cita" name="hora_cita" required>
+                        <option value="">Seleccione una hora</option>
+                        <option value="09:00">9:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="13:00">1:00 PM</option>
+                        <option value="14:00">2:00 PM</option>
+                        <option value="15:00">3:00 PM</option>
+                        <option value="16:00">4:00 PM</option>
+                        <option value="17:00">5:00 PM</option>
+                        <option value="18:00">6:00 PM</option>
+                        <option value="19:00">7:00 PM</option>
+                        <option value="20:00">8:00 PM</option>
+                        <option value="21:00">9:00 PM</option>
+                    </select>
+                    <label class="text_column" for="Medico">Elija médico:</label>
+                    <input class="input_column" type="text" id="Medico" name="Medico" required>
 
-                <label for="Medico">Elija médico:</label>
-                <input type="text" id="Medico" name="Medico" required><br><br>
-                
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required><br><br>
+                </div>
 
-                <label for="especificaciones">Especificaciones:</label>
-                <input type="text" id="especificaciones" name="especificaciones" required><br><br>
-                
+                <div class="column">
+                    
 
-                <button type="submit">Enviar</button>
+                    <label class="text_column" for="email">Correo electrónico:</label>
+                    <input class="input_column" type="email" id="email" name="email" required>
+
+                    <label class="text_column" for="especificaciones">Especificaciones:</label>
+                    <textarea cols="40" rows="7" class="input_column" type="text" id="especificaciones" name="especificaciones"></textarea>
+
+                    <button type="submit">Agendar cita</button>
+
+                </div>
             </form>
-        </section>
+        
     </main>
+    <script type="module" src="../datos/camposMedicos.js"></script>
 
-</body>
+</body> 
 </html>
