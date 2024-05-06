@@ -6,6 +6,8 @@
     <title>ReservarCita</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    
+
 </head>
 <body>
 
@@ -23,6 +25,61 @@
             </ul>
         </nav>
     </header>
+
+    <main>
+        <section>
+            <form>
+                <label for="especialidad">Elija especialidad:</label>
+                <select id="especialidad" name="especialidad" required>
+                    <option value="">Seleccione una especialidad</option>
+                    <option value="Cardiología">Cardiología</option>
+                    <option value="Dermatología">Dermatología</option>
+                    <option value="Endocrinología">Endocrinología</option>
+                    <option value="Gastroenterología">Gastroenterología</option>
+                    <option value="Neurología">Neurología</option>
+                    <option value="Oftalmología">Oftalmología</option>
+                    <option value="Oncología">Oncología</option>
+                    <option value="Pediatría">Pediatría</option>
+                    <option value="Psiquiatría">Psiquiatría</option>
+                    <option value="Traumatología">Traumatología</option>
+                </select><br><br>
+                
+                <label for="fecha_chita"> Elija día/mes/año:</label>
+                <input type="text" id="fecha_cita" name="fecha_cita" required><br><br>
+
+
+                <label for="hora_cita">Elija la hora de la cita:</label>
+                <select id="hora_cita" name="hora_cita" required>
+                    <option value="">Seleccione una hora</option>
+                    <option value="09:00">9:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="13:00">1:00 PM</option>
+                    <option value="14:00">2:00 PM</option>
+                    <option value="15:00">3:00 PM</option>
+                    <option value="16:00">4:00 PM</option>
+                    <option value="17:00">5:00 PM</option>
+                    <option value="18:00">6:00 PM</option>
+                    <option value="19:00">7:00 PM</option>
+                    <option value="20:00">8:00 PM</option>
+                    <option value="21:00">9:00 PM</option>
+                </select><br><br>
+
+                <label for="Medico">Elija médico:</label>
+                <input type="text" id="Medico" name="Medico" required><br><br>
+                
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="especificaciones">Especificaciones:</label>
+                <input type="text" id="especificaciones" name="especificaciones" required><br><br>
+                
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
 
 </body>
 </html>
