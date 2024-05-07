@@ -65,11 +65,13 @@ function iniciarSesion() {
     let pacienteExiste = pacientes.find(elemento => elemento.usuario === usuarioActual && elemento.contrasena === contrasenaActual);
 
     if (pacienteExiste) {
-        window.location.href = "index.html";
+        window.location.href = "../index.html";
     } else {
         document.getElementById('mensajefinal').innerHTML = 'Usuario o contraseña no válidos';
     }
 }
+
+let usser = new Array()
 
 function guardarInfo() {
     let usuarioActual = document.getElementById('usuario').value
@@ -80,4 +82,30 @@ function guardarInfo() {
 function iniciar() {
     iniciarSesion()
     guardarInfo()
+}
+
+function mostrarHistorial() {
+    let nombreCompleto = document.getElementById('nombrecompleto');
+    let edad = document.getElementById('edad');
+    let residencia = document.getElementById('residencia');
+    let pesoKilos = document.getElementById('peso');
+    let alturaMetros = document.getElementById('altura');
+    let tipoSangre = document.getElementById('tiposangre');
+    let alergias = document.getElementById('alergias');
+    let enfermedades = document.getElementById('enfermedades');
+
+    let usuarioA = pacientes.find(x => x.usuario === usser[0]); // Usar find en lugar de filter
+
+    console.log(usuarioA);
+
+    if (usuarioA) {
+        nombreCompleto.innerHTML = usuarioA.nombreCompleto;
+        edad.innerHTML = usuarioA.edad;
+        residencia.innerHTML = usuarioA.residencia;
+        pesoKilos.innerHTML = usuarioA.pesoKilos;
+        alturaMetros.innerHTML = usuarioA.alturaMetros;
+        tipoSangre.innerHTML = usuarioA.tipoSangre;
+        alergias.innerHTML = usuarioA.alergias.join(", "); // Convertir el array a una cadena
+        enfermedades.innerHTML = usuarioA.enfermedades.join(", "); // Convertir el array a una cadena
+    }
 }
