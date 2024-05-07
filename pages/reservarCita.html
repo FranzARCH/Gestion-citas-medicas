@@ -31,18 +31,19 @@
             <form class="container">
                 <div class="column">
                     
-                    <label class="text_column" for="escigerespecialidad">Elija especialidad:</label>
-                    <select class="input_column" name="" id="escogerespecialidad"></select>
+                    <label class="text_column" for="escogerespecialidad">Elija especialidad:</label>
+                    <select class="input_column" name="escogerespecialidad" id="escogerespecialidad"></select>
 
                     
                     <label class="text_column" for="fecha_cita">Elija día/mes/año:</label>
                     <input class="input_date_column" type="date" id="fecha_cita" name="fecha_cita" required>
 
 
-                    <label class="text_column" for="hora_cita">Elija la hora de la cita:</label>
-                    <select class="input_column" id="escogerhora" name="hora_cita" required></select>
-                    <label class="text_column" for="Medico">Elija médico:</label>
-                    <input class="input_column" type="text" id="escogermedico" name="Medico" required>
+                    <label class="text_column" for="escogerhora">Elija la hora de la cita:</label>
+                    <select class="input_column" id="escogerhora" name="escogerhora" required></select>
+
+                    <label class="text_column" for="escogermedico">Elija médico:</label>
+                    <select class="input_column" type="text" id="escogermedico" name="escogermedico" required></select>
 
                 </div>
 
@@ -55,7 +56,7 @@
                     <label class="text_column" for="especificaciones">Especificaciones:</label>
                     <textarea cols="40" rows="7" class="input_column" type="text" id="especificaciones" name="especificaciones"></textarea>
 
-                    <button type="submit">Agendar cita</button>
+                    <button type="submit" id="botonagendar">Agendar cita</button>
                     <p id="mensaje"></p>
 
                 </div>
