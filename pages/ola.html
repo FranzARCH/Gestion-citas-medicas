@@ -10,7 +10,7 @@
 </head>
 <body>
     <main>
-        <div class="container">
+        <form class="container" id="formulario">
             <div class="element-1">
                 <img class="logo" src="../assets/images/Imagen1.png" alt="Logo de FISImed">
             </div>
@@ -35,13 +35,34 @@
             </div>
             <div class="element-3">
                 <div class="bloque-boton">
-                    <button class="boton-inicio" type="button-iniciar" id="botoniniciar" onclick="iniciar()">Iniciar sesión</button>
+                    <button class="boton-inicio" type="submit" id="botoniniciar" >Iniciar sesión</button>
                 </div>
                 <div class="mensaje-final">
                     <p id="mensajefinal"></p>
                 </div>
             </div>
-        </div>
+        </form>
     </main>
+    <script>
+        //-------------------- Inicio de sesión --------------------//
+        document.addEventListener('DOMContentLoaded', function() {
+            const formularioInicio = document.getElementById('formulario')
+
+            formularioInicio.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                let usuarioIngresado = document.getElementById('usuario').value;
+                let contrasenaIngresada = document.getElementById('contrasena').value;
+
+                let paciente = pacientes.find(paciente => paciente.usuario === usuarioIngresado && paciente.contrasena === contrasenaIngresada);
+                if (paciente) {
+                    localStorage.setItem('pacienteActual', JSON.stringify(paciente));
+                    window.location.href = '../inicio.html';
+                } else {
+                    alert('Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
