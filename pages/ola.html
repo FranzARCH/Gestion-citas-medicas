@@ -57,7 +57,7 @@
                 let paciente = pacientes.find(paciente => paciente.usuario === usuarioIngresado && paciente.contrasena === contrasenaIngresada);
                 if (paciente) {
                     localStorage.setItem('pacienteActual', JSON.stringify(paciente));
-                    window.location.href = '../inicio.html';
+                    window.location.href = '../index.html';
                 } else {
                     alert('Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.');
                 }
