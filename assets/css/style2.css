@@ -44,11 +44,33 @@ nav ul li a:hover {
     color: black; 
 }
 
+.prim{
+    display: flex;
+    justify-content: space-between;      
+}
+
 .logo{
     max-width: 300px;
     height: auto;
     padding-left: 40px;
     margin-top: 20px;
+}
+
+.cerrar-sesion{
+    display: inline-block;   
+}
+
+.cerrar-sesion a{
+    padding: 20px 30px;
+    margin-top: 30px;
+    margin-right: 60px;
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-decoration:none;
+    border-radius: 10px;
 }
 
 .elementHeader{
@@ -62,7 +84,7 @@ nav ul li a:hover {
     align-items: center;
     height: 70vh;
     width: 100%;
-    border-bottom: 10px black solid;
+    border-bottom: 0px black solid;
     justify-content: space-around;
     align-items: center;
 }
@@ -70,17 +92,18 @@ nav ul li a:hover {
 .main .column{
     height: 80%;
     width: 45%;
-    border: 5px black solid;
+    border: 0px black solid;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    font-size: 18px;
 }
 
 .column .element-column{
     height: 16%;
     width: 90%;
-    border: 3px black solid;
+    border: 0px solid;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -90,11 +113,16 @@ nav ul li a:hover {
 .element-column .text-element{
     height: 50%;
     width: 40%;
-    border: 1px black solid;
+    padding-right: 15px;
+    border: 0px solid;
     display: flex;
-    align-items: center;
-    flex-direction: row;
+    justify-content: flex-end;
     font-weight: 550;
+    font-size: 22px;
+    background-color: black;
+    border-radius: 10px;
+    align-items: center;
+    color: white;
 }
 
 .element-column .text-respuesta{
@@ -105,8 +133,12 @@ nav ul li a:hover {
     border: 1px black solid;
     display: flex;
     align-items: center;
-    flex-direction: row;
+    justify-content: flex-start;
     border-radius: 10px;
+}
+
+.text-element p{
+    font-size: 17px;
 }
 
 p{
@@ -151,6 +183,7 @@ p{
     background-color: black;
     cursor: pointer;
     font-size: 20px; 
+    border-radius: 20px;
 }
 .button1:hover {
     background-color: #0056b3;
@@ -174,6 +207,10 @@ p{
     align-items: center;
     flex-direction: row;
     font-weight: 550;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    justify-content: center;
 }
 
 .element-block .respuesta-block{
