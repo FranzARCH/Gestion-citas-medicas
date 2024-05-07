@@ -115,6 +115,32 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+main {
+    padding: 20px;
+}   
+
+.campos-medicos {
+    margin-top: 20px;
+    margin-left: 8vw;
+    margin-right: 8vw;
+}
+
+.campos-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 40px; /* Espacio entre elementos */
+}
+
+.campo {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    border-radius: 8px;
+}
+
 .column button:hover {
     background-color: #0056b3; 
 }
