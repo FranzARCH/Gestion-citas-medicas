@@ -18,7 +18,7 @@
             <ul>
                 <li><a class="elementHeader" href="../index.html">Inicio</a></li>
                 <li><a class="elementHeader" href="reservarCita.html">Reservar cita</a></li>
-                <li><a class="elementHeader" href="historial.html">Historial medico</a></li>
+                <li><a class="elementHeader" href="historial.html" onclick="mostrarHistorial()">Historial medico</a></li>
                 <li><a class="elementHeader" href="contacto.html">Contactar</a></li>
 
             </ul>
@@ -97,6 +97,24 @@
         </div>
     
     </main>
+    <script>
+        //-------------------- Mostrar historial --------------------//
+        document.addEventListener('DOMContentLoaded', function() {
+            let pacienteActual = JSON.parse(localStorage.getItem('pacienteActual'))
 
+            if (pacienteActual) {
+                document.getElementById('nombrecompleto').innerText = pacienteActual.nombreCompleto
+                document.getElementById('edad').innerText = pacienteActual.edad
+                document.getElementById('residencia').innerText = pacienteActual.residencia
+                document.getElementById('peso').innerText = pacienteActual.pesoKilos
+                document.getElementById('altura').innerText = pacienteActual.alturaMetros
+                document.getElementById('tiposangre').innerText = pacienteActual.tipoSangre
+                document.getElementById('alergias').innerText = pacienteActual.alergias
+                document.getElementById('enfermedades').innerText = pacienteActual.enfermedades
+            } else {
+                alert('No se encontraron datos del paciente.')
+            }
+        })
+    </script>
 </body>
 </html>
