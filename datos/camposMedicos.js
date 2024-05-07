@@ -8,7 +8,7 @@ let horasDisponibles = ['--Seleccionar hora--', '07:00', '08:00', '09:00', '10:0
 let espeO = ''
 
 for (let i = 0; i < camposMedicos.length; i++) {
-    espeO += '<option id="opcionespecialidad" onchange="obtenerEspecialidad()">' + camposMedicos[i] + '</option>'
+    espeO += '<option id="opcionespecialidad">' + camposMedicos[i] + '</option>'
 }
 
 document.getElementById('escogerespecialidad').innerHTML = espeO
@@ -18,7 +18,7 @@ document.getElementById('escogerespecialidad').innerHTML = espeO
 let horaO = ''
 
 for (let i = 0; i < horasDisponibles.length; i++) {
-    horaO += '<option id="opcionhora" onchange="obtenerHora()">' + horasDisponibles[i] + '</option>'
+    horaO += '<option id="opcionhora">' + horasDisponibles[i] + '</option>'
 }
 
 document.getElementById('escogerhora').innerHTML = horaO
@@ -37,6 +37,29 @@ function obtenerHora() {
     return horaSeleccionada
 }
 
+function obtenerOpcionMedico() {
+    let opcionesMED = document.getElementById("escogermedico")
+    let medicoSeleccionado = opcionesMED.value
+    return medicoSeleccionado
+}
+
+function obtenerFecha() {
+    let opcionesFEC = document.getElementById("fecha_cita")
+    let fechaSeleccionada = opcionesFEC.value
+    return fechaSeleccionada
+}
+
+function obtenerCorreo() {
+    let opcionesCOR = document.getElementById("email")
+    let correoSeleccionado = opcionesCOR.value
+    return correoSeleccionado
+}
+
+function obtenerMotivo() {
+    let opcionesMOT = document.getElementById("especificaciones")
+    let motivoSeleccionado = opcionesMOT.value
+    return motivoSeleccionado
+}
 
 function obtenerMedicos() {
     let especialidadElegida = obtenerEspecialidad()
@@ -44,8 +67,6 @@ function obtenerMedicos() {
 
     let disponibilidad1 = medicos.filter(elemento => elemento.especialidades.some(elemento => elemento === especialidadElegida))
     let disponibilidad2 = medicos.filter(elemento => !elemento.horasOcupadas.includes(horaElegida))
-
-    console.log(disponibilidad1, disponibilidad2)
 
     let listaMedicos = disponibilidad1.filter(elemento => disponibilidad2.includes(elemento))
 
@@ -77,4 +98,4 @@ opcionesH.addEventListener('change', function() {
     obtenerMedicos()
 })
 
-// única modificación en el html: <select name="" id="escogermedico" required></select><br><br>
+export {obtenerCorreo, obtenerEspecialidad, obtenerFecha, obtenerHora, obtenerOpcionMedico, obtenerMotivo}
