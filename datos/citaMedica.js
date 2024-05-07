@@ -1,5 +1,7 @@
 // PESTAÑA 2
 
+import {obtenerCorreo, obtenerEspecialidad, obtenerFecha, obtenerHora, obtenerOpcionMedico, obtenerMotivo} from '../datos/camposMedicos.js'
+
 //-------------------- Médicos disponibles --------------------//
 
 let medico1 = {
@@ -51,30 +53,21 @@ function agregarCita(nuevaEspecialidad, nuevaFecha, nuevaHoraCita, nuevoMedicoCi
         motivo: nuevoMotivo,
     }
     citasMedicas.push(nuevaCita)
-    console.log(nuevaCita)
+    console.log(citasMedicas[citasMedicas.length - 1])
     document.getElementById('mensaje').innerHTML = 'Su cita ha sido agendada'
 }
 
-let agendarC = document.getElementById('botonagendar')
+export { medicos }
 
-export { medicos}
-
-//-------------------- Citas médicas --------------------//
 const form = document.getElementById('form')
 
 form.addEventListener("submit", e => {
     e.preventDefault()
-    const elegidaESP = document.getElementById('escogerespecialidad')
-    const elegidaFEC = document.getElementById('fecha_cita')
-    const elegidoHOR = document.getElementById('escogerhora')
-    const elegidoMED = document.getElementById('escogermedico')
-    const elegidoCOR = document.getElementById('email')
-    const elegidoMOT = document.getElementById('especificaciones')
-    let nuevaEspecialidad = elegidaESP.innerHTML
-    let nuevaFecha = elegidaFEC.innerHTML
-    let nuevaHoraCita = elegidoHOR.innerHTML
-    let nuevoMedicoCita = elegidoMED.innerHTML
-    let nuevoCorreo = elegidoCOR.innerHTML
-    let nuevoMotivo = elegidoMOT.innerHTML
+    let nuevaEspecialidad = obtenerEspecialidad()
+    let nuevaFecha = obtenerFecha()
+    let nuevaHoraCita = obtenerHora()
+    let nuevoMedicoCita = obtenerOpcionMedico()
+    let nuevoCorreo = obtenerCorreo()
+    let nuevoMotivo = obtenerMotivo()
     agregarCita(nuevaEspecialidad, nuevaFecha, nuevaHoraCita, nuevoMedicoCita, nuevoCorreo, nuevoMotivo)
 })
