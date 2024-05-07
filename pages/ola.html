@@ -4,16 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/styleInicio.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="../datos/pacientes.js"></script>
 </head>
 <body>
-    <label class="text_column">Usuario:</label>
-    <input class="input_date_column" id="usuario" required>
-    <label class="text_column">Contraseña:</label>
-    <input class="input_date_column" type="password" id="contrasena" required>
-    <button type="button" id="botoniniciar" onclick="iniciar()">Iniciar sesión</button>
-    <p id="mensajefinal"></p>
+    <main>
+        <div class="container">
+            <div class="element-1">
+                <img class="logo" src="../assets/images/Imagen1.png" alt="Logo de FISImed">
+            </div>
+            <div class="element-2">
+                <div class="usuario-block-2">
+                    <div class="text-2">
+                        <label>Usuario:</label>
+                    </div>
+                    <div class="contraseña-2">
+                        <input id="usuario" required>   
+                    </div> 
+                </div>
+                <div class="contraseña-block-2">
+                    <div class="text-2">
+                        <label>Contraseña:</label>
+                    </div>
+                    <div class="contraseña-2">
+                        <input type="password" id="contrasena" required>  
+                    </div> 
+                    
+                </div>
+            </div>
+            <div class="element-3">
+                <div class="bloque-boton">
+                    <button class="boton-inicio" type="button-iniciar" id="botoniniciar" onclick="iniciar()">Iniciar sesión</button>
+                </div>
+                <div class="mensaje-final">
+                    <p id="mensajefinal"></p>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
