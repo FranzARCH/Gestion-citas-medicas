@@ -1,5 +1,5 @@
 # Gestion-citas-medicas
-Usuarios y contraseñas para el login:
+Usuarios y contraseñas para el login (ola.html):
 
 Usuario1: joarcitouwu
 Contraseña1: software1
